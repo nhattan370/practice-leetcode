@@ -1,0 +1,33 @@
+/*
+ Example 1:
+
+Input:
+Logs table:
++----+-----+
+| id | num |
++----+-----+
+| 1  | 1   |
+| 2  | 1   |
+| 3  | 1   |
+| 4  | 2   |
+| 5  | 1   |
+| 6  | 2   |
+| 7  | 2   |
++----+-----+
+Output:
++-----------------+
+| ConsecutiveNums |
++-----------------+
+| 1               |
++-----------------+
+Explanation: 1 is the only number that appears consecutively for at least three times.
+ */
+WITH cte AS (
+    SELECT num,
+           lead(num,1) OVER(ORDER BY id) AS num1,
+        lead(num,2) OVER(ORDER BY id) AS num2
+    FROM Logs
+)
+SELECT DISTINCT num AS ConsecutiveNums
+FROM cte
+WHERE num=num1 AND num=num2;
