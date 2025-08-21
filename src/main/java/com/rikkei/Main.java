@@ -8,8 +8,15 @@ import java.util.Set;
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
-        Set<String> set = new HashSet<>(Arrays.asList("000","111","222","333","444","555","666","777","888","999"));
-        String s = "aaabbcc";
-        System.out.println(s.substring(4,7));
+
+    }
+    public static int reverse(int x) {
+        StringBuilder sbl = new StringBuilder(x+"");
+        sbl = sbl.reverse();
+        if(x<0){
+            sbl.delete(sbl.length()-1, sbl.length());
+            sbl.insert(0,"-");
+        }
+        return Integer.parseInt(sbl.toString());
     }
 }
