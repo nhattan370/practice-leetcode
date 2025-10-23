@@ -1,8 +1,5 @@
 package com.rikkei;
 
-import java.util.Arrays;
-import java.util.Map;
-
 public class a12_IntegerToRoman {
     public String intToRoman(int num) {
         StringBuilder sbd = new StringBuilder();
