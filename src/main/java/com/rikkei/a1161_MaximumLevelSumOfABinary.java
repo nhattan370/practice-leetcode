@@ -4,7 +4,7 @@ import java.util.LinkedList;
 import java.util.Queue;
 
 public class a1161_MaximumLevelSumOfABinary {
-    public static class TreeNode {
+    private class TreeNode {
         int val;
         TreeNode left;
         TreeNode right;
